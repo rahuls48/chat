@@ -106,43 +106,6 @@ public class Server implements Runnable {
             }
         }
 
-
-        //        @Override
-//        public void run() {
-//            try {
-//                out = new PrintWriter(client.getOutputStream(),true);
-//                // auto flush to true so don't mannually flush the messages
-//                in = new BufferedReader(new InputStreamReader(client.getInputStream()));
-//
-//                // to send a message to client 'out.println('hello')';
-//                // to read the message from the client 'in.readLine()';
-//                out.println("Enter the Name");
-//                String nickname = in.readLine();
-//                System.out.println(nickname +"connected");
-//                broadcast(nickname+"joined the chat ");
-//                String message;
-//                while((message=in.readLine())!= null){
-//                    if (message.startsWith("/nick")){
-//                        String[] messageSplit = message.split("",2);
-//                        if (messageSplit.length == 2){
-//                            broadcast(nickname + "changed their name to "+ messageSplit[1]);
-//                            System.out.println(nickname + "changed their name to "+ messageSplit[1]);
-//                            nickname = messageSplit[1];
-//                            out.println("Chaged your name to "+ nickname);
-//                        }else {
-//                            out.println("no nickname was provided");
-//                        }
-//                    } else if (message.startsWith("/quit")) {
-//                        broadcast(nickname+ "left the chat");
-//                        shutdown();
-//                    }else {
-//                        broadcast(nickname+":"+ message);
-//                    }
-//                }
-//            }catch (IOException e){
-//                shutdown();
-//            }
-//        }
         public void sendMessage(String message){
             out.println(message);
         }
